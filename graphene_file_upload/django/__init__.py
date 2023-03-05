@@ -24,6 +24,9 @@ class FileUploadGraphQLView(GraphQLView):
 
 def generateFileUploadGraphQLView(view):
     class FileUploadGraphQLView(view):
+        def __init__(self, *args, **kwargse):
+            super().__init__(self, *args, **kwargse)
+            
         """Handles multipart/form-data content type in django views"""
         def parse_body(self, request):
             """Handle multipart request spec for multipart/form-data"""
